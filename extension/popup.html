@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Talaria</title>
+<link rel="stylesheet" href="eyverqt.css">
+<style>
+  body { width: 320px; padding: 16px; }
+  .logo { display: block; margin-bottom: 14px; }
+  #titulo { font-weight: 700; text-transform: uppercase; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; padding: 10px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); min-height: 18px; }
+  .acts { display: flex; gap: 8px; margin-top: 12px; }
+  .acts .btn:first-child { flex: 1; }
+  #estado { margin-top: 12px; text-transform: uppercase; min-height: 18px; }
+  #estado.err { color: var(--accent); font-weight: 700; }
+  #abrir { margin-top: 8px; display: inline-block; text-transform: uppercase; font-weight: 700; }
+</style>
+</head>
+<body>
+  <span class="logo">Talaria</span>
+  <div id="titulo"></div>
+  <div class="acts">
+    <button class="btn" type="button" id="video">Vídeo</button>
+    <button class="btn ghost-btn" type="button" id="audio">Solo audio</button>
+  </div>
+  <p id="estado" class="muted"></p>
+  <a class="link" id="abrir" href="http://127.0.0.1:5241/" target="_blank">Abrir Talaria ↗</a>
+  <script src="popup.js"></script>
+</body>
+</html>

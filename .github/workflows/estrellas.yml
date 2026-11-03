@@ -1,0 +1,41 @@
+# Redibuja docs/estrellas.svg (grafica con el estilo eyverqt) cada dia y
+# cada vez que alguien da una estrella al repositorio.
+name: Estrellas
+
+on:
+  watch:
+    types: [started]
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: estrellas
+  cancel-in-progress: false
+
+jobs:
+  grafica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dibujar la gráfica
+        run: python scripts/estrellas.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Guardar si cambió
+        run: |
+          git config user.name "eyverqt"
+          git config user.email "eyverqt@gmail.com"
+          git add docs/estrellas.svg
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Gráfica de estrellas"
+            git push
+          fi

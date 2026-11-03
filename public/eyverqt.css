@@ -1,0 +1,153 @@
+/* ==========================================================================
+   ESTILO EYVERQT — sistema base (sacado de github/portfolio/index.html)
+   Editorial suizo: blanco, tinta casi negra, un solo acento rojo, mono
+   en mayúsculas a 12px y titulares Archivo ultracondensado.
+   Copiar este archivo + fonts/ y construir encima; no cambiar los tokens.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo-800.woff2") format("woff2");
+  font-weight: 800; font-stretch: 62% 125%; font-display: swap;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  src: url("fonts/chivo-mono.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+}
+
+:root {
+  --ink: #2e2e30;      /* texto */
+  --logo: #1d1d1f;     /* titulares y números grandes */
+  --accent: #ff2400;   /* único color: hover, activo, alertas, punto vivo */
+  --muted: #8a8a8e;    /* etiquetas secundarias */
+  --panel: #f5f5f5;    /* fondos de bloque */
+  --line: #e6e6e6;     /* filetes de 1px */
+  --bg: #ffffff;
+  --mono: "Chivo Mono", ui-monospace, monospace;
+  --display: "Archivo", "Arial Narrow", sans-serif;
+  --ease: cubic-bezier(.65, 0, .35, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 12px/1.5 var(--mono);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: #fff; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; text-transform: inherit; letter-spacing: inherit; }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+.up { text-transform: uppercase; }
+.muted { color: var(--muted); }
+.red { color: var(--accent); }
+
+/* Titular / logo: Archivo 800 al 62% de ancho, interlineado apretado */
+.logo, .display {
+  font-family: var(--display); font-weight: 800;
+  font-stretch: 62%; font-variation-settings: "wdth" 62;
+  line-height: .82; letter-spacing: -.035em; text-transform: uppercase; color: var(--logo);
+}
+.logo { font-size: 40px; }
+
+/* Cabecera: logo a la izquierda, meta mono a la derecha */
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.meta { display: flex; gap: 18px; align-items: center; text-transform: uppercase; padding-top: 6px; }
+
+/* Navegación: enlaces mono, activo en negrita, "hot" en rojo con punto vivo */
+.nav { display: flex; flex-wrap: wrap; gap: 6px 25px; text-transform: uppercase; }
+.nav a, .nav button { transition: opacity .2s; }
+.nav a:hover, .nav button:hover { opacity: .55; }
+.nav .is-active { font-weight: 700; }
+.hot { color: var(--accent); font-weight: 700; }
+.dot::before, .hot::before {
+  content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); margin-right: 7px; vertical-align: 1px;
+  animation: eq-pulse 2s ease-in-out infinite;
+}
+@keyframes eq-pulse { 50% { opacity: .25; } }
+
+/* Fila desplegable: título en negrita a la izquierda, etiqueta a la derecha */
+.row {
+  width: 100%; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding: 12px 0; font-weight: 700; text-transform: uppercase; text-align: left; line-height: 1.15;
+}
+.row .title, .row .tag { transition: color .2s; }
+.row .tag { text-align: right; color: var(--muted); font-weight: 400; }
+.row:hover .title, .row[aria-expanded="true"] .title, .row.is-on .title { color: var(--accent); }
+
+/* Panel que se abre con grid-template-rows (sin medir alturas) */
+.panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.panel > .inner { overflow: hidden; min-height: 0; }
+.open > .panel, .panel.open { grid-template-rows: 1fr; }
+
+/* Cifras: rejilla con filetes y números Archivo grandes */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stats > div { padding: 12px 0; text-transform: uppercase; }
+.stats > div + div { padding-left: 12px; border-left: 1px solid var(--line); }
+.stats b {
+  display: block; font-family: var(--display); font-variation-settings: "wdth" 62; font-weight: 800;
+  font-size: 44px; line-height: .9; letter-spacing: -.02em; color: var(--logo); margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Lista con filetes */
+.list { list-style: none; border-top: 1px solid var(--line); }
+.list > li { border-bottom: 1px solid var(--line); }
+
+/* Chips: borde de tinta, radio 2px */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { border: 1px solid var(--ink); border-radius: 2px; padding: 1px 6px; text-transform: uppercase; font-size: 11px; }
+
+/* Enlaces subrayados en mayúsculas */
+.links { display: flex; flex-wrap: wrap; gap: 8px 22px; text-transform: uppercase; font-weight: 700; }
+.links a, .link { border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: color .2s; }
+.links a:hover, .link:hover { color: var(--accent); }
+
+/* Botón principal: tinta → rojo al pasar */
+.btn {
+  background: var(--ink); color: #fff; font-weight: 700; text-transform: uppercase;
+  padding: 11px 18px; border-radius: 2px; transition: background .2s;
+}
+.btn:hover:not(:disabled) { background: var(--accent); }
+.btn:disabled { background: var(--line); color: var(--muted); cursor: default; }
+.btn.ghost-btn { background: none; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.btn.ghost-btn:hover:not(:disabled) { background: none; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.btn.ghost-btn:disabled { background: none; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+
+/* Formulario: campos sin caja, solo filete inferior, texto en negrita */
+.form { display: grid; border-top: 1px solid var(--ink); }
+.field { display: block; border-bottom: 1px solid var(--line); }
+.field input, .field select {
+  width: 100%; border: 0; background: none; color: var(--ink); font: 700 12px var(--mono);
+  text-transform: uppercase; padding: 13px 0; outline: none;
+}
+.field input::placeholder { color: var(--muted); text-transform: uppercase; font-weight: 700; }
+.field:focus-within { border-bottom-color: var(--accent); }
+
+/* Texto fantasma: titular solo contorno, para vacíos y portadas */
+.ghost {
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px;
+  font-family: var(--display); font-variation-settings: "wdth" 62; font-weight: 800;
+  font-size: 64px; line-height: .85; text-transform: uppercase; letter-spacing: -.03em;
+  color: transparent; -webkit-text-stroke: 1px var(--ink); text-align: center;
+}
+.ghost small { font: 700 12px var(--mono); -webkit-text-stroke: 0; color: var(--ink); letter-spacing: 0; }
+
+/* Barra de progreso: filete de 1px que se llena en rojo */
+.bar { height: 1px; background: var(--line); position: relative; overflow: hidden; }
+.bar > i { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--accent); transition: width .3s var(--ease); }
+
+/* Pie: marca gigante en contorno gris */
+.footer-mark {
+  font-family: var(--display); font-variation-settings: "wdth" 62; font-weight: 800;
+  line-height: .9; text-transform: uppercase; letter-spacing: -.03em;
+  color: transparent; -webkit-text-stroke: 1px #d2d2d4;
+}
+
+/* Barras de scroll discretas */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }

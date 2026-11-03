@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talaria</title>
+<meta name="description" content="Talaria — descarga vídeo y audio de más de mil sitios, en paralelo y en máxima calidad, desde tu equipo.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/eyverqt.css">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+<header class="header page">
+  <a class="logo" href="/descargar" data-ir="descargar">Talaria<br><span id="logoSub">Descargar</span></a>
+  <div class="meta"><span class="muted" id="metaTools">Preparando</span><span class="hot" id="live">Sin descargas</span></div>
+</header>
+
+<nav class="nav page sub" id="tabs" aria-label="Secciones">
+  <a href="/descargar" data-ir="descargar">Descargar</a>
+  <a href="/historial" data-ir="historial">Historial <span class="muted" id="nHist"></span></a>
+  <a href="/ajustes" data-ir="ajustes">Ajustes</a>
+</nav>
+
+<div class="bar page-bar" id="barTop"><i></i></div>
+
+<main class="wrap">
+
+  <section class="pagina" data-p="descargar">
+    <div class="cols">
+      <div>
+        <section class="step">
+          <div class="label up"><b>01 · Enlaces</b><span class="muted">Vídeos, playlists o canales</span></div>
+          <textarea id="enlaces" rows="5" spellcheck="false" placeholder="Pega uno o varios enlaces: YouTube, TikTok, Instagram, X, Vimeo… Pega en cualquier parte de la ventana."></textarea>
+          <div class="acts">
+            <button class="btn" type="button" id="btnDescargar" title="Ctrl+Enter">Descargar</button>
+            <button class="btn ghost-btn" type="button" id="btnPegar">Pegar</button>
+          </div>
+        </section>
+
+        <section class="step">
+          <div class="label up"><b>02 · Formato</b><span class="muted" id="formatoHint"></span></div>
+          <div class="opt"><span>Tipo</span>
+            <div class="seg" data-key="mode"><button type="button" data-v="video">Vídeo</button><button type="button" data-v="audio">Solo audio</button></div></div>
+          <div class="opt soloVideo"><span>Calidad</span>
+            <div class="seg" data-key="quality"><button type="button" data-v="best">Máxima</button><button type="button" data-v="2160">4K</button><button type="button" data-v="1440">2K</button><button type="button" data-v="1080">1080p</button><button type="button" data-v="720">720p</button><button type="button" data-v="480">480p</button></div></div>
+          <div class="opt soloVideo"><span>Contenedor</span>
+            <div class="seg" data-key="container"><button type="button" data-v="mp4">MP4 · compatible</button><button type="button" data-v="mkv">MKV · sin límites</button></div></div>
+          <div class="opt soloAudio" hidden><span>Audio</span>
+            <div class="seg" data-key="format"><button type="button" data-v="mp3">MP3</button><button type="button" data-v="m4a">M4A</button><button type="button" data-v="opus">Opus</button><button type="button" data-v="flac">FLAC</button><button type="button" data-v="wav">WAV</button><button type="button" data-v="original">Original</button></div></div>
+          <div class="opt soloVideo"><span>Subtítulos</span>
+            <div class="seg" data-key="subs"><button type="button" data-v="false">No</button><button type="button" data-v="true">ES + EN</button></div></div>
+          <div class="opt"><span>Quitar patrocinios</span>
+            <div class="seg" data-key="sponsor"><button type="button" data-v="false">No</button><button type="button" data-v="true">SponsorBlock</button></div></div>
+          <div class="opt"><span>Turbo</span>
+            <div class="seg" data-key="useAria2"><button type="button" data-v="false">Normal</button><button type="button" data-v="true">aria2c · 16 conexiones</button></div></div>
+          <div class="clip">
+            <span class="up">Recortar</span>
+            <label class="field"><input id="clipDesde" spellcheck="false" autocomplete="off" placeholder="Desde 0:30"></label>
+            <label class="field"><input id="clipHasta" spellcheck="false" autocomplete="off" placeholder="Hasta 1:45"></label>
+          </div>
+        </section>
+      </div>
+
+      <div class="pegado">
+        <div class="stats mini">
+          <div><b id="stActivas">0</b>Activas</div>
+          <div><b id="stVeloz">0</b><span id="stVelozU">MB/s en total</span></div>
+          <div><b id="stListas">0</b>Listas</div>
+        </div>
+        <section class="step">
+          <div class="label up"><b>03 · Descargas</b><span><span class="muted" id="colaHint"></span><button type="button" class="lnk" id="btnPausar">Pausar todo</button><button type="button" class="lnk" id="btnReintentar">Reintentar</button><button type="button" class="lnk" id="btnLimpiar">Limpiar</button></span></div>
+          <ul class="jobs" id="cola"></ul>
+          <div class="ghost vacio-g" id="colaVacia">Talaria<small>Pega un enlace y pulsa Ctrl+Enter</small></div>
+          <div class="acts"><button class="btn ghost-btn" type="button" id="btnCarpeta">Abrir carpeta</button></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="pagina" data-p="historial" hidden>
+    <div class="stats" id="histStats">
+      <div><b id="hsN">0</b>Descargas</div>
+      <div><b id="hsG">0</b><span id="hsGu">GB en disco</span></div>
+      <div><b id="hsH">0</b><span id="hsHu">Minutos</span></div>
+    </div>
+    <section class="step">
+      <div class="label up"><b>Historial</b><span><span class="muted" id="histHint"></span><button type="button" class="lnk" id="btnVaciarHist">Vaciar</button></span></div>
+      <label class="field"><input id="histQ" spellcheck="false" autocomplete="off" placeholder="Filtrar por título o canal"></label>
+      <ul class="hist" id="histLista"></ul>
+      <div class="ghost vacio-g" id="histVacio">Vacío<small>Lo que descargues queda aquí, también al cerrar</small></div>
+    </section>
+  </section>
+
+  <section class="pagina angosta" data-p="ajustes" hidden>
+    <section class="step">
+      <div class="label up"><b>01 · Descargas</b></div>
+      <div class="linkbox"><label class="field"><input id="outDir" spellcheck="false" placeholder="Carpeta de destino"></label><button class="btn ghost-btn" type="button" id="btnElegir">Examinar</button></div>
+      <div class="opt"><span>A la vez</span>
+        <div class="seg" data-key="parallel"><button type="button" data-v="auto">Auto</button><button type="button" data-v="2">2</button><button type="button" data-v="4">4</button><button type="button" data-v="8">8</button><button type="button" data-v="16">16</button><button type="button" data-v="inf">Sin límite</button></div></div>
+      <div class="opt"><span>Límite de velocidad</span>
+        <div class="seg" data-key="rateLimit"><button type="button" data-v="">Ninguno</button><button type="button" data-v="1M">1 MB/s</button><button type="button" data-v="5M">5 MB/s</button><button type="button" data-v="10M">10 MB/s</button></div></div>
+      <div class="opt"><span>No repetir lo descargado</span>
+        <div class="seg" data-key="dedupe"><button type="button" data-v="true">Sí</button><button type="button" data-v="false">No</button></div></div>
+      <div class="opt"><span>Cookies del navegador</span>
+        <div class="seg" data-key="cookiesFromBrowser"><button type="button" data-v="">No usar</button><button type="button" data-v="firefox">Firefox</button><button type="button" data-v="chrome">Chrome</button><button type="button" data-v="edge">Edge</button><button type="button" data-v="brave">Brave</button></div></div>
+      <p class="nota muted up">Las cookies solo hacen falta para vídeos privados o con restricción de edad. Se leen en tu equipo y solo las usa yt-dlp.</p>
+    </section>
+
+    <section class="step">
+      <div class="label up"><b>02 · Herramientas</b><span class="muted">Se instalan y se actualizan solas</span></div>
+      <ul class="tools" id="tools"></ul>
+      <div class="opt"><span>Actualizar yt-dlp solo</span>
+        <div class="seg" data-key="autoUpdate"><button type="button" data-v="true">Sí</button><button type="button" data-v="false">No</button></div></div>
+      <div class="acts"><button class="btn ghost-btn" type="button" id="btnActualizar">Buscar actualización</button></div>
+    </section>
+
+    <section class="step">
+      <div class="label up"><b>03 · Extensión de Chrome</b><span class="muted">Un clic desde cualquier vídeo</span></div>
+      <p class="nota muted up">chrome://extensions → modo desarrollador → cargar descomprimida → carpeta <code>extension</code> de Talaria. Añade un botón y clic derecho «Descargar con Talaria» en páginas y enlaces.</p>
+    </section>
+
+    <section class="step">
+      <div class="label up"><b>04 · Por qué Talaria</b><span class="muted">Frente a lo que ya existe</span></div>
+      <ul class="list vs" id="vs"></ul>
+    </section>
+  </section>
+
+</main>
+
+<div class="marquee" aria-hidden="true"><div><span>Talaria</span><span>Pega</span><span>Descarga</span><span>Listo</span><span>Talaria</span><span>Pega</span><span>Descarga</span><span>Listo</span></div></div>
+<footer class="footer">
+  <a href="https://eyverqt.netlify.app" target="_blank" rel="noopener">Portfolio</a>
+  <a href="https://github.com/eyverqt/talaria" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://cal.com/eyverqt/15min" target="_blank" rel="noopener">Agendar llamada</a>
+  <a href="https://wa.me/573127115299" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="mailto:eyverqt@gmail.com">Email</a>
+</footer>
+
+<div class="toast" id="toast" hidden></div>
+<script src="/app.js"></script>
+</body>
+</html>

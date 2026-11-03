@@ -1,0 +1,105 @@
+/* Talaria — layout encima de eyverqt.css (los tokens no se tocan) */
+[hidden] { display: none !important; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+.page { padding-left: 20px; padding-right: 20px; }
+.header.page { padding-top: 20px; }
+.logo { display: block; }
+.logo span { color: var(--muted); }
+.meta { flex-wrap: wrap; justify-content: flex-end; }
+.sub { padding-top: 30px; }
+.nav a { padding-bottom: 2px; }
+.page-bar { margin: 14px 20px 0; }
+.wrap { flex: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 30px 20px 20px; }
+.angosta { max-width: 760px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 40px; align-items: start; }
+.pegado { position: sticky; top: 16px; }
+.step { margin-bottom: 34px; }
+.label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+.label > span { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; justify-content: flex-end; }
+.lnk { font-weight: 700; text-transform: uppercase; border-bottom: 1px solid currentColor; transition: color .2s; }
+.lnk:hover { color: var(--accent); }
+.nota { font-size: 11px; padding: 10px 0; line-height: 1.6; }
+.nota code { font: 700 11px var(--mono); background: var(--panel); padding: 2px 6px; border-radius: 2px; text-transform: none; }
+
+/* 01 Enlaces */
+#enlaces { display: block; width: 100%; margin-top: 12px; resize: vertical; border: 0; border-bottom: 1px solid var(--line); background: var(--panel); border-radius: 2px; font: 400 12px/20px var(--mono); color: var(--ink); padding: 12px; outline: none; transition: background .2s; }
+#enlaces:focus { border-bottom-color: var(--accent); }
+#enlaces::placeholder { color: var(--muted); text-transform: uppercase; font-weight: 700; }
+#enlaces.over { background: #fff0ed; }
+.acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.acts .btn:first-child:not(:last-child) { flex: 1; }
+.linkbox { display: flex; gap: 8px; align-items: end; margin-top: 6px; }
+.linkbox .field { flex: 1; min-width: 0; }
+.linkbox .field input, #histQ { text-transform: none; }
+.linkbox .field input::placeholder, #histQ::placeholder { text-transform: uppercase; }
+.clip { display: grid; grid-template-columns: auto 1fr 1fr; gap: 14px; align-items: end; }
+.clip > span { padding-bottom: 13px; }
+
+/* Selectores de opción (estilo ES/EN del portfolio) */
+.opt { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); text-transform: uppercase; flex-wrap: wrap; }
+.seg { display: flex; gap: 6px 16px; flex-wrap: wrap; justify-content: flex-end; }
+.seg button { color: var(--muted); transition: color .2s; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { color: var(--ink); font-weight: 700; }
+.seg button[aria-pressed="true"]::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 6px; vertical-align: 1px; }
+
+/* 03 Descargas */
+.stats.mini { margin-bottom: 26px; }
+.stats.mini b { font-size: 38px; font-variant-numeric: tabular-nums; }
+.jobs, .hist, .tools { list-style: none; }
+.jobs { max-height: 60vh; overflow: auto; }
+.job { padding: 11px 0 9px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+.miniatura { width: 72px; height: 41px; background: var(--panel); border-radius: 2px; object-fit: cover; display: block; }
+.job-h, .job-f { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.job-h b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-transform: uppercase; }
+.job-h > span { text-transform: uppercase; white-space: nowrap; color: var(--muted); }
+.job .bar { margin: 7px 0 6px; }
+.job-f > span { font-size: 11px; color: var(--muted); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; font-variant-numeric: tabular-nums; }
+.job-a { display: flex; gap: 10px; flex-shrink: 0; }
+.job-a button { font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; transition: color .2s; }
+.job-a button:hover { color: var(--accent); }
+.job[data-estado="descargando"] .job-h > span, .job[data-estado="uniendo"] .job-h > span, .job[data-estado="convirtiendo"] .job-h > span { color: var(--accent); font-weight: 700; }
+.job[data-estado="listo"] .job-h > span { color: var(--ink); font-weight: 700; }
+.job[data-estado="error"] .job-f > span { color: var(--accent); white-space: normal; }
+.job[data-estado="leyendo"] .bar > i, .job[data-estado="esperando"] .bar > i { width: 30% !important; animation: tramo 1.2s var(--ease) infinite alternate; }
+@keyframes tramo { from { left: 0; } to { left: 70%; } }
+.vacio-g { font-size: 72px; padding: 80px 0; }
+.vacio-g small { text-transform: uppercase; max-width: 380px; line-height: 1.6; font-weight: 700; }
+
+/* Historial */
+#histStats { margin-bottom: 30px; }
+.h-fila { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); align-items: center; }
+.h-fila b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-transform: uppercase; }
+.h-fila small { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Ajustes */
+.tools li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); text-transform: uppercase; }
+.tools b { font-weight: 700; }
+.tools .err { color: var(--accent); }
+.vs li { padding: 12px 0; display: grid; grid-template-columns: 170px 1fr; gap: 14px; text-transform: uppercase; }
+.vs li b { font-weight: 700; }
+.vs li span { color: var(--muted); line-height: 1.6; font-size: 11px; }
+.vs li span em { color: var(--ink); font-style: normal; font-weight: 700; }
+.vs li.yo b { color: var(--accent); }
+
+/* Cinta y pie, como en el portfolio */
+.marquee { overflow: hidden; white-space: nowrap; padding: 20px 0 0; pointer-events: none; user-select: none; }
+.marquee div { display: inline-block; animation: cinta 40s linear infinite; }
+.marquee span { font-family: var(--display); font-variation-settings: "wdth" 62; font-weight: 800; font-size: clamp(56px, 11vw, 140px); line-height: .9; text-transform: uppercase; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 1px #d2d2d4; padding-right: 40px; }
+@keyframes cinta { to { transform: translateX(-50%); } }
+.footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 56px; padding: 26px 20px 24px; }
+.footer a { font-size: 8px; font-weight: 700; line-height: 8px; letter-spacing: .02em; text-transform: uppercase; transition: color .2s; }
+.footer a:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .marquee div, .hot::before, .job .bar > i { animation: none; } }
+
+.toast { position: fixed; left: 20px; bottom: 20px; max-width: 520px; background: var(--ink); color: #fff; padding: 11px 16px; border-radius: 2px; text-transform: uppercase; font-weight: 700; z-index: 20; }
+.toast.err { background: var(--accent); }
+
+@media (max-width: 920px) {
+  .cols { grid-template-columns: 1fr; gap: 10px; }
+  .pegado { position: static; }
+  .jobs { max-height: none; }
+  .vs li { grid-template-columns: 1fr; gap: 4px; }
+  .clip { grid-template-columns: 1fr 1fr; }
+  .clip > span { grid-column: 1 / -1; padding: 12px 0 0; }
+}

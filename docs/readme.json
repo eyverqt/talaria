@@ -1,0 +1,113 @@
+{
+  "nombre": "TALARIA",
+  "repo": "talaria",
+  "cabecera": ["DESCARGADOR LOCAL", "PEGA, DESCARGA Y LISTO", "● v1.0 · PÚBLICO"],
+  "portada": {"img": "docs/talaria-descargar.jpg", "alt": "Talaria bajando varios vídeos a la vez, cada uno con su progreso, velocidad y tiempo restante"},
+  "enlaces": [["↓ INSTALAR EN WINDOWS", "#instalar"], ["POR QUÉ TALARIA", "#por-que"], ["PORTFOLIO", "https://eyverqt.netlify.app"]],
+  "lema": "(SIN CUENTAS, SIN ANUNCIOS, SIN TOPES)",
+  "intro": [
+    "Pega un enlace y baja el vídeo o el audio en la máxima calidad.",
+    "YouTube, TikTok, Instagram, X y más de mil sitios, con yt-dlp.",
+    "Una cola con límite: una playlist de 200 no tumba tu equipo.",
+    "Si el sitio cambia, se actualiza y reintenta sin que hagas nada.",
+    "Sin instalar nada más que Node. Arranca en una décima de segundo."
+  ],
+  "secciones": [
+    {"titulo": "QUÉ HACE", "par": "(ENLACE → VÍDEO O AUDIO EN MÁXIMA CALIDAD)", "contenido": [
+      "Pegas uno o varios enlaces, vídeos, playlists o canales, en cualquier",
+      "parte de la ventana. La página responde al instante y cada descarga",
+      "aparece con su progreso, velocidad y tiempo restante.",
+      "",
+      {"b": "CÓMO FUNCIONA:"},
+      "",
+      "ENLACE · PLAYLIST · CANAL",
+      {"cols": ["→ LEER", "(HASTA 4 A LA VEZ, SIN REPETIR LA EXTRACCIÓN)"], "anchos": [14]},
+      {"cols": ["→ COLA", "(AUTO, 2, 4, 8, 16 O SIN LÍMITE)"], "anchos": [14]},
+      {"cols": ["→ DESCARGAR", "(MP4, MKV, MP3, M4A, OPUS, FLAC, WAV)"], "anchos": [14]},
+      {"cols": ["→ SI FALLA", "(ACTUALIZA YT-DLP, CAMBIA DE CLIENTE, REINTENTA)"], "anchos": [14]},
+      {"cols": ["→ HISTORIAL", "(NO VUELVE A BAJAR LO QUE YA TIENES)"], "anchos": [14]},
+      {"cols": ["→ TIRO", "(TRANSCRIBE LO DESCARGADO, EN TU EQUIPO)"], "anchos": [14]}
+    ]},
+    {"titulo": "NOVEDADES", "par": "(v1.0: CUATRO DESCARGADORES EN UNO)", "contenido": [
+      {"b": "2026-11 · TALARIA 1.0"},
+      "",
+      "Sale de unir YT Turbo, Descargador de Vídeo y MediaDownloader, y",
+      "sustituye a la extensión de terceros por una propia.",
+      "",
+      {"cols": ["● SIN DEPENDENCIAS", "(NI NPM INSTALL NI BUILD: SOLO NODE)"], "anchos": [22]},
+      {"cols": ["● EXTENSIÓN PROPIA", "(UN CLIC Y CLIC DERECHO EN CHROME)"], "anchos": [22]},
+      {"cols": ["● PAUSAR Y REANUDAR", "(SIGUE DONDE IBA, NO EMPIEZA DE CERO)"], "anchos": [22]},
+      {"cols": ["● RECORTAR", "(BAJA SOLO DEL 0:30 AL 1:45)"], "anchos": [22]},
+      {"cols": ["● SPONSORBLOCK", "(QUITA PATROCINIOS DEL VÍDEO)"], "anchos": [22]}
+    ]},
+    {"titulo": "POR QUÉ", "par": "(LO MEDIDO Y FRENTE A QUIÉN)", "ancla": "por-que", "contenido": [
+      {"b": "LO MEDIDO (PORTÁTIL I5-1035G1, ~8 MB/S POR DESCARGA):"},
+      "",
+      {"cols": ["ARRANQUE", "0,09 S HASTA RESPONDER"], "anchos": [24]},
+      {"cols": ["PRIMERA VEZ", "10 S: BAJA YT-DLP Y ARIA2C SOLOS"], "anchos": [24]},
+      {"cols": ["4 A LA VEZ", "10-16 MB/S EN TOTAL, FRENTE A ~8 DE UNA"], "anchos": [24]},
+      {"cols": ["8 VÍDEOS CORTOS", "36-38 S, FRENTE A 39-42 S EN SERIE"], "anchos": [24]},
+      {"cols": ["UN SOLO VÍDEO (148 MB)", "18-19 S, IGUAL QUE YT-DLP SOLO"], "anchos": [24]},
+      "",
+      "El Turbo con aria2c fue más lento en YouTube (25 s frente a 19 s):",
+      "por eso viene apagado. Actívalo solo en sitios que limiten cada conexión.",
+      "",
+      {"b": "FRENTE A LOS DEMÁS (NOVIEMBRE DE 2026):"},
+      "",
+      {"cols": ["YOUWEE", "MÁS FUNCIONES (IA, PLUGINS, SUBTÍTULOS). HAY QUE INSTALARLA"], "anchos": [16]},
+      {"cols": ["4K DOWNLOADER+", "TOPE DIARIO GRATIS, ANUNCIOS, DESDE ~15 USD/AÑO"], "anchos": [16]},
+      {"cols": ["YTDOWNLOADER", "LIBRE Y POPULAR, HECHA EN ELECTRON"], "anchos": [16]},
+      {"cols": ["ARCDLP", "LIBRE, EN ELECTRON, COLA DE UNA EN UNA"], "anchos": [16]},
+      {"cols": ["COBALT", "WEB, DEPENDE DE UN SERVIDOR AJENO"], "anchos": [16]},
+      "",
+      {"b": "LO QUE TALARIA HACE DISTINTO:"},
+      "",
+      {"cols": ["● CERO INSTALACIÓN", "(CARPETA Y LISTO: SIN INSTALADOR NI ELECTRON)"], "anchos": [22]},
+      {"cols": ["● SE REPARA SOLO", "(YT-DLP AL DÍA Y REINTENTOS POR TIPO DE ERROR)"], "anchos": [22]},
+      {"cols": ["● ERRORES CLAROS", "(DICE QUÉ HACER, NO UN VOLCADO TÉCNICO)"], "anchos": [22]},
+      {"cols": ["● NO REPITE", "(MISMO VÍDEO Y FORMATO: YA LO TIENES)"], "anchos": [22]},
+      {"cols": ["● API CERRADA", "(UNA WEB AJENA NO PUEDE ORDENAR DESCARGAS)"], "anchos": [22]},
+      {"cols": ["● CON TIRO", "(DESCARGA Y TRANSCRIBE, SIN SALIR DE TU PC)"], "anchos": [22]},
+      "",
+      "Si quieres IA, plugins o editar subtítulos, Youwee hace más.",
+      "Talaria es para pegar, bajar y seguir con lo tuyo."
+    ]},
+    {"titulo": "INSTALAR", "par": "(SOLO WINDOWS Y NODE 20 O SUPERIOR)", "ancla": "instalar", "contenido": [
+      "No hay npm install ni build. yt-dlp, FFmpeg y aria2c se instalan solos",
+      "la primera vez, en paralelo, en la carpeta bin.",
+      {"codigo": "bash", "texto": "git clone https://github.com/eyverqt/talaria.git\ncd talaria\nstart.bat"},
+      "Se abre en http://127.0.0.1:5241/. Si no tienes Node:",
+      {"codigo": "bash", "texto": "winget install OpenJS.NodeJS.LTS"},
+      {"b": "EXTENSIÓN DE CHROME:"},
+      "",
+      "chrome://extensions → modo desarrollador → cargar descomprimida →",
+      "carpeta extension. Añade un botón y el clic derecho en cualquier enlace."
+    ]},
+    {"titulo": "USAR", "par": "(PEGAR, ELEGIR Y SOLTAR)", "contenido": [
+      {"cols": ["PEGA Y CTRL+ENTER", "→ EMPIEZA CON EL FORMATO ELEGIDO"], "anchos": [26]},
+      {"cols": ["PEGA UNA PLAYLIST", "→ UN TRABAJO POR VÍDEO, EN SU SUBCARPETA"], "anchos": [26]},
+      {"cols": ["ARRASTRA UN ENLACE", "→ CAE EN LA CAJA"], "anchos": [26]},
+      {"cols": ["DESDE 0:30 HASTA 1:45", "→ BAJA SOLO ESE TROZO"], "anchos": [26]},
+      {"cols": ["VÍDEO PRIVADO O CON EDAD", "→ ELIGE COOKIES EN AJUSTES"], "anchos": [26]},
+      {"cols": ["TRANSCRIBIR", "→ LO MANDA A LA COLA DE TIRO"], "anchos": [26]},
+      "",
+      "Descarga solo contenido sobre el que tengas derechos o cuya licencia",
+      "lo permita. Respetar las condiciones de cada sitio es cosa de quien lo usa."
+    ]},
+    {"titulo": "GALERÍA", "par": "(HISTORIAL, AJUSTES Y EXTENSIÓN)", "contenido": [
+      {"imagenes": [["docs/talaria-historial.jpg", "Historial con lo descargado, para abrirlo o bajarlo otra vez"], ["docs/talaria-ajustes.jpg", "Ajustes: simultáneas, cookies, herramientas y comparativa"]]},
+      {"detalles": "ESTRUCTURA DEL PROYECTO", "codigo": "text", "texto": "talaria/\n├── start.bat            # Comprueba Node y arranca\n├── server/\n│   ├── index.mjs        # Servidor sin dependencias, API y sucesos en vivo\n│   ├── downloads.mjs    # Cola, formatos, progreso y recuperación de errores\n│   └── tools.mjs        # Instala y actualiza yt-dlp, FFmpeg y aria2c\n├── public/              # Interfaz con el estilo eyverqt, sin build\n├── extension/           # Extensión de Chrome propia\n└── scripts/estrellas.py # La gráfica de estrellas (GitHub Actions)"}
+    ]},
+    {"titulo": "LICENCIA", "par": "(CÓDIGO MIT, CONTENIDO © EYVER GÓMEZ)", "contenido": [
+      "Código bajo MIT. Contenido y diseño © Eyver Gómez.",
+      "yt-dlp, FFmpeg y aria2c se descargan aparte y mantienen sus licencias.",
+      "",
+      {"b": "PRIVACIDAD:"},
+      "",
+      "Sin cuentas, sin telemetría y sin servidores propios. Ajustes e historial",
+      "viven en Documents\\Talaria. Las cookies solo las lee yt-dlp en tu equipo."
+    ]}
+  ],
+  "estrellas": true,
+  "pie": [["PORTFOLIO", "https://eyverqt.netlify.app"], ["TIRO", "https://github.com/eyverqt/tiro"], ["GITHUB", "https://github.com/eyverqt"], ["AGENDAR LLAMADA", "https://cal.com/eyverqt/15min"], ["WHATSAPP", "https://wa.me/573127115299"], ["EMAIL", "mailto:eyverqt@gmail.com"], ["LICENCIA", "LICENSE"]]
+}

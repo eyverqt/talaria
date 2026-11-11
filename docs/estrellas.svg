@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="380" viewBox="0 0 920 380" role="img" aria-label="Estrellas de eyverqt/talaria: 0">
 <rect width="920" height="380" fill="#ffffff"/>
 <text x="20" y="34" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#2e2e30" letter-spacing=".5">ESTRELLAS · EYVERQT/TALARIA</text>
-<text x="900" y="34" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" fill="#8a8a8e" text-anchor="end">ACTUALIZADO 10 NOV 2026</text>
+<text x="900" y="34" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" fill="#8a8a8e" text-anchor="end">ACTUALIZADO 11 NOV 2026</text>
 <line x1="20" y1="46" x2="900" y2="46" stroke="#2e2e30"/>
 <text x="17" y="122" font-family="'Archivo', 'Arial Narrow', 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif" font-size="84" font-weight="800" font-stretch="condensed" fill="#1d1d1f" letter-spacing="-3">0</text>
 <circle cx="26" cy="136" r="3" fill="#ff2400"><animate attributeName="opacity" values="1;.25;1" dur="2s" repeatCount="indefinite"/></circle>
@@ -13,5 +13,5 @@
 <text x="20" y="316.0" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#2e2e30">SÉ LA PRIMERA ESTRELLA ↗</text>
 <line x1="20" y1="330.5" x2="900" y2="330.5" stroke="#2e2e30"/>
 <text x="20" y="354" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" fill="#8a8a8e">03 NOV 2026</text>
-<text x="900" y="354" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" fill="#8a8a8e" text-anchor="end">10 NOV 2026</text>
+<text x="900" y="354" font-family="'Chivo Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" fill="#8a8a8e" text-anchor="end">11 NOV 2026</text>
 </svg>
